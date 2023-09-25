@@ -21,9 +21,9 @@ public class Main {
 
             for (Element s: rows) {
                 var tempWind =  s.select("td").text();
-                var wind = s.select("td.tc_weather__forecast__list__wind__speed");
+                var wind = s.select("span.tc_weather__forecast__list__wind__speed").text();
                 var time = s.select ("th").text();
-                var precipitation = s.select("td.tc_weather_forecast_list_precipitation").text();
+                var precipitation = s.select("td.tc__weather__forecast__list__precipitation").text();
                 if (precipitation.equals("")) {
                     precipitation = "0";
                     
