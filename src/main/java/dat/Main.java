@@ -25,7 +25,7 @@ public class Main {
                 var precipitation = s.select("td.tc_weather_forecast_list_precipitation").text();
                 if (precipitation.equals("")) {
                     precipitation = "0";
-
+                    
                 }
                 double precipitationFinal = Double.parseDouble(precipitation);
 
