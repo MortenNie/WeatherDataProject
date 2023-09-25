@@ -20,11 +20,12 @@ public class Main {
             var rows = table.select("tr");
 
             for (Element s: rows) {
+
                 var tempWind =  s.select("td").text();
                 var wind = s.select("span.tc_weather__forecast__list__wind__speed").text();
                 var time = s.select ("th").text();
                 var precipitation = s.select("td.tc__weather__forecast__list__precipitation").text();
-                if (precipitation.equals("")) {
+                if (precipitation.isEmpty()) {
                     precipitation = "0";
                     
                 }
@@ -36,7 +37,10 @@ public class Main {
 
                 String wind = windTempArr[1];*/
 
-                System.out.println(wind);
+                if (!wind.isEmpty()) {
+
+                    System.out.println(wind + " " + precipitationFinal);
+                }
             }
 
 
