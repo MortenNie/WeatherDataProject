@@ -21,6 +21,7 @@ public class Main {
 
             for (Element s: rows) {
                 var tempWind =  s.select("td").text();
+                var wind = s.select("td.tc_weather__forecast__list__wind__speed");
                 var time = s.select ("th").text();
                 var precipitation = s.select("td.tc_weather_forecast_list_precipitation").text();
                 if (precipitation.equals("")) {
@@ -29,7 +30,13 @@ public class Main {
                 }
                 double precipitationFinal = Double.parseDouble(precipitation);
 
-                System.out.println(time + " - " + tempWind + " - " + precipitationFinal + "mm");
+                /*String[] windTempArr = tempWind.trim().split("    -    ");
+
+                String temp = windTempArr[0];
+
+                String wind = windTempArr[1];*/
+
+                System.out.println(wind);
             }
 
 
