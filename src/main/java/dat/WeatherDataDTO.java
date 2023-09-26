@@ -56,14 +56,14 @@ public class WeatherDataDTO {
                 "date: " + date + "\n" +
                 "temperatur: " + temperatur + "°c" + "\n" +
                 "wind: " + wind + " m/s" + "\n" +
-                "precipitation: " + precipitation + "%" + "\n" +
+                "precipitation: " + precipitation + "mm" + "\n" +
                 "deg: " + deg + "\n" +
                 "humidity: " + humidity + "%" + "\n" +
                 "lon: " + lon + "\n" +
                 "lat: " + lat + "\n" +
                 "main: " + main + "\n" +
                 "description: " + description + "\n" +
-                "visibility=" + visibility + "\n" +
+                "visibility: " + visibility + "\n" +
                 '}';
     }
 }
