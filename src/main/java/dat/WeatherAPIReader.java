@@ -24,7 +24,7 @@ public class WeatherAPIReader {
 
     }
 
-    public static void getWeatherFromCity(List<WeatherDataConnectorToDTO> weatherData, String city) {
+    public static WeatherDataDTO getWeatherFromCity(List<WeatherDataConnectorToDTO> weatherData, String city) {
 
         String url = API_URL + city + API_KEY;
         OkHttpClient client = new OkHttpClient().newBuilder().build();
@@ -51,7 +51,7 @@ public class WeatherAPIReader {
                     weatherDTO.getWeather()[0].getDescription(),
                     weatherDTO.getVisibility());
 
-            System.out.println(weatherDataFinal);
+            return weatherDataFinal;
 
 
         } catch (IOException e) {

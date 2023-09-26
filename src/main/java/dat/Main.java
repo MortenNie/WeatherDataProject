@@ -19,9 +19,14 @@ import static dat.WeatherAPIReader.gson;
 public class Main {
     public static void main(String[] args) {
         String input = WeatherInputManager.cityInput();
-        List<WeatherDataConnectorToDTO> weatherData = WebScraping.tv2Weather(input);
-        WeatherAPIReader.getWeatherFromCity(weatherData, input);
 
+        if (input.equalsIgnoreCase("København") || input.equalsIgnoreCase("Odense") || input.equalsIgnoreCase("Gladsaxe")) {
+            List<WeatherDataConnectorToDTO> weatherData = WebScraping.tv2Weather(input);
+            WeatherDataDTO obj = WeatherAPIReader.getWeatherFromCity(weatherData, input);
+            System.out.println(obj);
+        } else {
+            System.out.println("try again");
+        }
 
 
 
