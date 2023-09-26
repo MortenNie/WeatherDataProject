@@ -10,8 +10,29 @@ import java.util.List;
 
 public class WebScraping {
 
-    public static List<WeatherDataConnectorToDTO> tv2Weather() {
-        String url = "https://vejr.tv2.dk/vejr/koebenhavn-2618425";
+    public static List<WeatherDataConnectorToDTO> tv2Weather(String input) {
+        String url = "";
+
+        if (input.equalsIgnoreCase("København")) {
+            url = "https://vejr.tv2.dk/vejr/koebenhavn-2618425";
+        }
+
+        else if (input.equalsIgnoreCase("Gladsaxe")) {
+
+            url = "https://vejr.tv2.dk/vejr/gladsaxe-2621395";
+
+        }
+
+        else if (input.equalsIgnoreCase("Odense")) {
+
+            url = "https://vejr.tv2.dk/vejr/odense-2615876";
+
+        } else {
+
+            System.out.println("choose København, Gladsaxe or Odense, dummy.");
+
+        }
+
         List<WeatherDataConnectorToDTO> weatherData = new ArrayList<>();
         try {
             Document document = Jsoup.connect(url).get();

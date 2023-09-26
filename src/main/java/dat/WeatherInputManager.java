@@ -6,7 +6,7 @@ import java.util.Scanner;
 public class WeatherInputManager {
 
 
-    public void cityInput() {
+    public static String cityInput() {
 
 
         try {
@@ -17,6 +17,8 @@ public class WeatherInputManager {
             System.out.println("You have search for : " + city);
 
             sc.close();
+
+            return city;
 
         } catch (Exception e) {
             throw new RuntimeException(e);

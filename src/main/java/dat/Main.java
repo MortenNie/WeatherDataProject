@@ -18,9 +18,11 @@ import static dat.WeatherAPIReader.gson;
 
 public class Main {
     public static void main(String[] args) {
-        
-        List<WeatherDataConnectorToDTO> weatherData = WebScraping.tv2Weather();
-        WeatherAPIReader.getWeatherFromCity(weatherData, "københavn");
+        String input = WeatherInputManager.cityInput();
+        List<WeatherDataConnectorToDTO> weatherData = WebScraping.tv2Weather(input);
+        WeatherAPIReader.getWeatherFromCity(weatherData, input);
+
+
 
 
     }
