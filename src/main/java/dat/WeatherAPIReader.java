@@ -41,9 +41,6 @@ public class WeatherAPIReader {
         }
 
 
-
-
-
     }
 
 
@@ -60,6 +57,7 @@ public class WeatherAPIReader {
         private Wind wind;
 
     }
+
     class Coord {
         private double lon;
         private double lat;
@@ -67,11 +65,12 @@ public class WeatherAPIReader {
         public double getLon() {
             return lon;
         }
+
         public double getLat() {
             return lat;
         }
     }
-    }
+
 
     class Weather {
         private String main;
@@ -85,21 +84,24 @@ public class WeatherAPIReader {
             return description;
         }
     }
-class WeatherMain {
-    private int humidity;
 
-    public int getHumidity(){
-        return humidity;
+    class WeatherMain {
+        private int humidity;
+
+        public int getHumidity() {
+            return humidity;
+        }
     }
-}
 
 
     class Wind {
         private int deg;
 
-        public int getDeg(){
+        public int getDeg() {
             return deg;
         }
 
+
+    }
 
 }

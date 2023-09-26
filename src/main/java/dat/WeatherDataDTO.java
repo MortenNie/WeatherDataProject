@@ -1,7 +1,13 @@
 package dat;
 
-import java.time.LocalDate;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
 
+import java.time.LocalDate;
+@ToString
+@Getter
+@Setter
 public class WeatherDataDTO {
     private String time;
 
@@ -9,7 +15,7 @@ public class WeatherDataDTO {
 
     private double temperatur;
 
-    private String wind;
+    private double wind;
 
     private double precipitation;
 
@@ -27,5 +33,18 @@ public class WeatherDataDTO {
 
     private int visibility;
 
-
+    public WeatherDataDTO(String time, LocalDate date, double temperatur, double wind, double precipitation, int deg, int humidity, double lon, double lat, String main, String description, int visibility) {
+        this.time = time;
+        this.date = date;
+        this.temperatur = temperatur;
+        this.wind = wind;
+        this.precipitation = precipitation;
+        this.deg = deg;
+        this.humidity = humidity;
+        this.lon = lon;
+        this.lat = lat;
+        this.main = main;
+        this.description = description;
+        this.visibility = visibility;
+    }
 }
