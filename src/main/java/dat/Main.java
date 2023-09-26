@@ -21,8 +21,9 @@ public class Main {
 
             for (Element s: rows) {
 
-                var tempWind =  s.select("td").text();
-                var wind = s.select("span.tc_weather__forecast__list__wind__speed").text();
+                var temperaturAndWind =  s.select("td").text();
+                var temporaryWind = s.select("span.tc_weather__forecast__list__wind__speed").text();
+                var temporaryTemperatur = s.select("td.tc_weather__forecast__list__temperature").text();
                 var time = s.select ("th").text();
                 var precipitation = s.select("td.tc__weather__forecast__list__precipitation").text();
                 if (precipitation.isEmpty()) {
@@ -31,15 +32,13 @@ public class Main {
                 }
                 double precipitationFinal = Double.parseDouble(precipitation);
 
-                /*String[] windTempArr = tempWind.trim().split("    -    ");
+                if (!temporaryWind.isEmpty()) {
+                     var temporaryWind2 = temporaryWind.replace("m/s","");
+                     double windFinal = Double.parseDouble(temporaryWind2);
+                     var temporaryTemperatur2 =  temporaryTemperatur.replace("°", "");
+                     double temp = Double.parseDouble(temporaryTemperatur2);
 
-                String temp = windTempArr[0];
-
-                String wind = windTempArr[1];*/
-
-                if (!wind.isEmpty()) {
-
-                    System.out.println(wind + " " + precipitationFinal);
+                    System.out.println(time + " " + temp + "°  " + precipitationFinal + " " + windFinal + " m/s");
                 }
             }
 
