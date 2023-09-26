@@ -5,7 +5,7 @@ import lombok.Setter;
 import lombok.ToString;
 
 import java.time.LocalDate;
-@ToString
+
 @Getter
 @Setter
 public class WeatherDataDTO {
@@ -46,5 +46,24 @@ public class WeatherDataDTO {
         this.main = main;
         this.description = description;
         this.visibility = visibility;
+    }
+
+    @Override
+    public String toString() {
+        return "Weather Data" + "\n" +
+                "{" + "\n" +
+                "time: " + time + "\n" +
+                "date: " + date + "\n" +
+                "temperatur: " + temperatur + "°c" + "\n" +
+                "wind: " + wind + " m/s" + "\n" +
+                "precipitation: " + precipitation + "%" + "\n" +
+                "deg: " + deg + "\n" +
+                "humidity: " + humidity + "%" + "\n" +
+                "lon: " + lon + "\n" +
+                "lat: " + lat + "\n" +
+                "main: " + main + "\n" +
+                "description: " + description + "\n" +
+                "visibility=" + visibility + "\n" +
+                '}';
     }
 }
