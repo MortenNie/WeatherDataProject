@@ -4,6 +4,8 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.time.LocalDate;
+import java.util.Objects;
+
 @Getter
 @Setter
 public class WeatherDataConnectorToDTO {
@@ -64,5 +66,18 @@ public class WeatherDataConnectorToDTO {
 
     public void setPrecipitation(double precipitation) {
         this.precipitation = precipitation;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        WeatherDataConnectorToDTO that = (WeatherDataConnectorToDTO) o;
+        return Double.compare(temperatur, that.temperatur) == 0 && Double.compare(wind, that.wind) == 0 && Double.compare(precipitation, that.precipitation) == 0 && Objects.equals(time, that.time) && Objects.equals(date, that.date);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(time, date, temperatur, wind, precipitation);
     }
 }
