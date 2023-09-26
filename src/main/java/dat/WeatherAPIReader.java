@@ -10,6 +10,7 @@ import okhttp3.Response;
 
 import java.beans.Visibility;
 import java.io.IOException;
+import java.util.List;
 
 public class WeatherAPIReader {
 
@@ -20,10 +21,10 @@ public class WeatherAPIReader {
 
 
     public static void main(String[] args) {
-        getWeatherFromCity("Harare");
+
     }
 
-    public static void getWeatherFromCity(String city) {
+    public static void getWeatherFromCity(List<WeatherDataConnectorToDTO> weatherData, String city) {
 
         String url = API_URL + city + API_KEY;
         OkHttpClient client = new OkHttpClient().newBuilder().build();
@@ -36,8 +37,21 @@ public class WeatherAPIReader {
             response = client.newCall(request).execute();
             String res = response.body().string();
             WeatherDTO weatherDTO = gson.fromJson(res, WeatherDTO.class);
-            System.out.println(weatherDTO);
-            System.out.println(gson.toJson(weatherDTO));
+
+            WeatherDataDTO weatherDataFinal = new WeatherDataDTO(weatherData.get(0).getTime(),
+                    weatherData.get(0).getDate(),
+                    weatherData.get(0).getTemperatur(),
+                    weatherData.get(0).getWind(),
+                    weatherData.get(0).getPrecipitation(),
+                    weatherDTO.getWind().getDeg(),
+                    weatherDTO.getWeatherMain().getHumidity(),
+                    weatherDTO.getCoord().getLon(),
+                    weatherDTO.getCoord().getLat(),
+                    weatherDTO.getWeather()[0].getMain(),
+                    weatherDTO.getWeather()[0].getDescription(),
+                    weatherDTO.getVisibility());
+
+            System.out.println(weatherDataFinal);
 
 
         } catch (IOException e) {
@@ -55,7 +69,6 @@ public class WeatherAPIReader {
         private Weather[] weather;
         @SerializedName("main")
         private WeatherMain weatherMain;
-        @Getter
         private int visibility;
         private Wind wind;
 
