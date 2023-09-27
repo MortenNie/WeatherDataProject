@@ -20,7 +20,12 @@ public class Main {
     public static void main(String[] args) {
 
         WeatherEntity entity = WeatherDataDTO.runWeatherEntity();
-        WeatherEntityDao dao = new WeatherEntityDao();
-        dao.saveWeather(entity);
+        if (entity.getDescription() != null) {
+            WeatherEntityDao dao = new WeatherEntityDao();
+            dao.saveWeather(entity);
+        }
     }
+
+
+
 }

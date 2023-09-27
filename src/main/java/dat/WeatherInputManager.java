@@ -11,10 +11,10 @@ public class WeatherInputManager {
 
         try {
             Scanner sc = new Scanner(System.in);
-            System.out.println("Please enter your city of interest : ");
+            System.out.println("Please enter your city of interest: København, Odense or Gladsaxe");
 
             String city = sc.nextLine();
-            System.out.println("You have search for : " + city);
+            System.out.println("You have searched for : " + city);
 
             sc.close();
 
