@@ -87,7 +87,6 @@ public class WeatherAPIReader {
         }
     }
 
-
     class Weather {
         private String main;
         private String description;
@@ -100,7 +99,6 @@ public class WeatherAPIReader {
             return description;
         }
     }
-
     class WeatherMain {
         private int humidity;
 
@@ -108,16 +106,11 @@ public class WeatherAPIReader {
             return humidity;
         }
     }
-
-
     class Wind {
         private int deg;
 
         public int getDeg() {
             return deg;
         }
-
-
     }
-
 }

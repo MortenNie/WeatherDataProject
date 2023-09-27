@@ -40,9 +40,9 @@ class WeatherAPIReaderTest {
     }
     @Test
     void testNullCity(){
-        String city = "London";
+        String city = null;
 
-        assertThrows(ValidationException.class, () -> {
+        assertThrows(NullPointerException.class, () -> {
             List<WeatherDataConnectorToDTO> invalidTest = WebScraping.tv2Weather(city);
             WeatherDataDTO obj = new WeatherDataDTO("15.00", LocalDate.now(), 15.0, 3.0, 0.0, 140, 69, 12.5655, 55.6759, "Clouds", "overcast clouds", 10000);
             WeatherDataDTO wdto = WeatherAPIReader.getWeatherFromCity(invalidTest, city);
