@@ -1,12 +1,14 @@
 package dat;
 
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
 import java.time.LocalDate;
 
 @Getter
+@NoArgsConstructor
 @Setter
 public class WeatherDataDTO {
     private String time;
