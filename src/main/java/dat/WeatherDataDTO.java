@@ -7,6 +7,7 @@ import lombok.ToString;
 
 import java.time.LocalDate;
 import java.util.List;
+import java.util.Objects;
 
 @Getter
 @NoArgsConstructor
@@ -88,6 +89,20 @@ public class WeatherDataDTO {
             System.out.println("try again");
         }
         return weatherEntity;
+    }
+
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        WeatherDataDTO that = (WeatherDataDTO) o;
+        return Double.compare(temperatur, that.temperatur) == 0 && Double.compare(wind, that.wind) == 0 && Double.compare(precipitation, that.precipitation) == 0 && deg == that.deg && humidity == that.humidity && Double.compare(lon, that.lon) == 0 && Double.compare(lat, that.lat) == 0 && visibility == that.visibility && Objects.equals(time, that.time) && Objects.equals(date, that.date) && Objects.equals(main, that.main) && Objects.equals(description, that.description);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(time, date, temperatur, wind, precipitation, deg, humidity, lon, lat, main, description, visibility);
     }
 
 }
