@@ -56,8 +56,7 @@ public class WeatherEntity {
     @Column(name = "visibility")
     private int visibility;
 
-    @ManyToOne
-    public User user;
+
 
     public WeatherEntity(String time, LocalDate date, double temperatur, double wind, double precipitation, int deg, int humidity, double lon, double lat, String main, String description, int visibility) {
         this.time = time;
@@ -79,12 +78,12 @@ public class WeatherEntity {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         WeatherEntity that = (WeatherEntity) o;
-        return id == that.id && deg == that.deg && humidity == that.humidity && visibility == that.visibility && Objects.equals(time, that.time) && Objects.equals(date, that.date) && Objects.equals(temperatur, that.temperatur) && Objects.equals(wind, that.wind) && Objects.equals(precipitation, that.precipitation) && Objects.equals(lon, that.lon) && Objects.equals(lat, that.lat) && Objects.equals(main, that.main) && Objects.equals(description, that.description) && Objects.equals(user, that.user);
+        return Double.compare(temperatur, that.temperatur) == 0 && Double.compare(wind, that.wind) == 0 && Double.compare(precipitation, that.precipitation) == 0 && deg == that.deg && humidity == that.humidity && Double.compare(lon, that.lon) == 0 && Double.compare(lat, that.lat) == 0 && visibility == that.visibility && Objects.equals(time, that.time) && Objects.equals(date, that.date) && Objects.equals(main, that.main) && Objects.equals(description, that.description);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, time, date, temperatur, wind, precipitation, deg, humidity, lon, lat, main, description, visibility, user);
+        return Objects.hash(time, date, temperatur, wind, precipitation, deg, humidity, lon, lat, main, description, visibility);
     }
 
     @Override

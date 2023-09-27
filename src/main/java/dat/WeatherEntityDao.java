@@ -13,12 +13,12 @@ public class WeatherEntityDao {
     //getAll, getYesterday, update(LocalDate date)
     EntityManagerFactory emf = HibernateConfig.getEntityManagerFactoryConfig("WeatherData");
 
-    public List<WeatherEntity> getAll(String userName){
+    public List<WeatherEntity> getAll(){
 
         try (var em = emf.createEntityManager()) {
 
-            TypedQuery<WeatherEntity> query = em.createQuery("SELECT w FROM WeatherEntity w WHERE user.userName = :parameter ", WeatherEntity.class);
-            query.setParameter("parameter", userName);
+            TypedQuery<WeatherEntity> query = em.createQuery("SELECT w FROM WeatherEntity w ", WeatherEntity.class);
+
             List<WeatherEntity> results = query.getResultList();
 
 
