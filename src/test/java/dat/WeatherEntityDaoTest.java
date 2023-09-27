@@ -11,6 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 
 class WeatherEntityDaoTest {
@@ -49,19 +50,40 @@ class WeatherEntityDaoTest {
         List<WeatherEntity> kage = weatherEntityDao.getAll();
 
         assertEquals(weatherEntityList,kage);
-         
-
-
 
 
     }
 
     @Test
     void getYesterday() {
+
+
+        LocalDate yesterday = LocalDate.now().minusDays(1);
+        WeatherEntity testWeatherEnt = new WeatherEntity("14.00", yesterday,
+                21, 2.0, 0.0, 221, 65,
+                    12.5655, 55.6759, "Clouds", "broken clouds", 10000);
+            saveWeather(testWeatherEnt);
+
+
+            WeatherEntity retrievedWeather = weatherEntityDao.getYesterday(LocalDate.now());
+            assertEquals(yesterday, retrievedWeather.getTime());
+
+
+
     }
 
     @Test
     void saveWeather() {
+
+
+            WeatherEntity testWeatherEnt = new WeatherEntity("14.00", LocalDate.now(),
+                    21, 2.0, 0.0, 221, 65,
+                    12.5655, 55.6759, "Clouds", "broken clouds", 10000);
+
+            WeatherEntity savedWeather = saveWeather(testWeatherEnt);
+            WeatherEntity retrievedWeather = em.find(WeatherEntity.class, savedWeather.getId());
+            assertEquals(testWeatherEnt, retrievedWeather);
+
 
     }
 
