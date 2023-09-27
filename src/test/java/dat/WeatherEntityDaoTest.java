@@ -10,6 +10,9 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+
 class WeatherEntityDaoTest {
 
     private static EntityManagerFactory emf;
@@ -36,12 +39,16 @@ class WeatherEntityDaoTest {
 
     @Test
     void getAll() {
+
         WeatherEntity testWeatherEnt = new WeatherEntity("14.00", LocalDate.now(),
                 21,2.0,0.0,221,65,
                 12.5655,55.6759,"Clouds","broken clouds",10000);
         List<WeatherEntity> weatherEntityList= new ArrayList<>();
         weatherEntityList.add(testWeatherEnt);
         saveWeather(testWeatherEnt);
+        List<WeatherEntity> kage = weatherEntityDao.getAll();
+
+        assertEquals(weatherEntityList,kage);
          
 
 
