@@ -6,6 +6,7 @@ import lombok.Setter;
 import lombok.ToString;
 
 import java.time.LocalDate;
+import java.util.List;
 
 @Getter
 @NoArgsConstructor
@@ -68,4 +69,29 @@ public class WeatherDataDTO {
                 "visibility: " + visibility + "\n" +
                 '}';
     }
+
+    public static WeatherEntity runWeatherEntity() {
+        String input = WeatherInputManager.cityInput();
+        WeatherEntity weatherEntity = new WeatherEntity();
+        if (input.equalsIgnoreCase("København") || input.equalsIgnoreCase("Odense") || input.equalsIgnoreCase("Gladsaxe")) {
+            List<WeatherDataConnectorToDTO> weatherData = WebScraping.tv2Weather(input);
+            WeatherDataDTO obj = WeatherAPIReader.getWeatherFromCity(weatherData, input);
+
+            weatherEntity = new WeatherEntity(obj.getTime(), obj.getDate(),
+                    obj.getTemperatur(), obj.getWind(), obj.getPrecipitation(),
+                    obj.getDeg(), obj.getHumidity(), obj.getLon(), obj.getLat(),
+                    obj.getMain(), obj.getDescription(), obj.getVisibility());
+
+
+            System.out.println(weatherEntity);
+        } else {
+            System.out.println("try again");
+        }
+        return weatherEntity;
+    }
+
 }
+
+
+
+

@@ -13,8 +13,7 @@ import java.util.Objects;
 @Getter
 @Setter
 @NoArgsConstructor
-@ToString
-public class WeatherEntity extends WeatherDataDTO{
+public class WeatherEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -60,11 +59,19 @@ public class WeatherEntity extends WeatherDataDTO{
     @ManyToOne
     public User user;
 
-    public WeatherEntity(String time, LocalDate date, double temperatur, double wind,
-                         double precipitation, int deg, int humidity,
-                         double lon, double lat, String main, String description, int visibility) {
-        super(time, date, temperatur, wind, precipitation,
-                deg, humidity, lon, lat, main, description, visibility);
+    public WeatherEntity(String time, LocalDate date, double temperatur, double wind, double precipitation, int deg, int humidity, double lon, double lat, String main, String description, int visibility) {
+        this.time = time;
+        this.date = date;
+        this.temperatur = temperatur;
+        this.wind = wind;
+        this.precipitation = precipitation;
+        this.deg = deg;
+        this.humidity = humidity;
+        this.lon = lon;
+        this.lat = lat;
+        this.main = main;
+        this.description = description;
+        this.visibility = visibility;
     }
 
     @Override
@@ -78,5 +85,24 @@ public class WeatherEntity extends WeatherDataDTO{
     @Override
     public int hashCode() {
         return Objects.hash(id, time, date, temperatur, wind, precipitation, deg, humidity, lon, lat, main, description, visibility, user);
+    }
+
+    @Override
+    public String toString() {
+        return "Weather Data" + "\n" +
+                "{" + "\n" +
+                "time: " + time + "\n" +
+                "date: " + date + "\n" +
+                "temperatur: " + temperatur + "°c" + "\n" +
+                "wind: " + wind + " m/s" + "\n" +
+                "precipitation: " + precipitation + "mm" + "\n" +
+                "deg: " + deg + "\n" +
+                "humidity: " + humidity + "%" + "\n" +
+                "lon: " + lon + "\n" +
+                "lat: " + lat + "\n" +
+                "main: " + main + "\n" +
+                "description: " + description + "\n" +
+                "visibility: " + visibility + "\n" +
+                '}';
     }
 }
