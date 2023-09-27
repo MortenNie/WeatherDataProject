@@ -7,7 +7,7 @@ Morten, Jakob, Dimitra
 **<h3>1. A Description of work progress:</h3>**
 
 We decided to work every day in class like last time. <br>
-We feel like we work better as a group this way.
+We feel like we work better and more efficiently as a group this way.
 We've used Kanban boards, Github Desktop, IntelliJ 2023.2.1. <br>
 We've also used things like Discord to communicate when not together physically.
 
@@ -15,7 +15,12 @@ We've also used things like Discord to communicate when not together physically.
 
 **<h3>2. Business Model:</h3>**
 
-xD(placeholder)
+We would like to be able to webscrape weather-data from the website TV2Vejret.
+Afterwards we would like to add additional weather data from Openweathermap.org API to 
+enrich the information we've webscraped. Then Organizing the information, adding it together and finally adding
+the information to a database where we can keep info. <br>
+So in short: Get weather data from TV2, get additional weather data from Openweathermap API
+Combine the data and put the data into a database.
 
 
 
@@ -28,15 +33,15 @@ xD(placeholder)
 
 
 
-**<h3>4. Links and tools used: </h3><br>**
+**<h3>4. Documentation: </h3><br>**
 We've used the website https://vejr.tv2.dk/ to webscrape information from. <br>
 
 We then used the API https://openweathermap.org/current to Enrich our information. <br>
 
 This is the API We used: https://api.openweathermap.org/data/2.5/weather 
 
-From the API we Enriched our Weather information with additional Weather information, including <br>
-things like Longtitude, Latitude, A text description of the weather, Humidity levels and wind degrees.
+From the API we Enriched our Weather information with additional Weather information, including
+things like: <br>  Longtitude, Latitude, A text description of the weather, Humidity levels and wind degrees.
 
 
 <h3>Edge Cases:</h3>
@@ -60,3 +65,5 @@ so that you don't overload the server and get yourself IP Blocked.
   **Edge Case:** The website we are scraping from is temporarily down or undergoing maintenance. <br>
   **Potential Fix:** We could put our scraping action into an If statement and loop that will continuously run until it succeeds by getting information back.
 This is where a downtime/delay in the loop would be great to implement.
+
+
