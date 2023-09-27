@@ -19,7 +19,8 @@ import static dat.WeatherAPIReader.gson;
 public class Main {
     public static void main(String[] args) {
 
-        WeatherDataDTO.runWeatherEntity();
-
+        WeatherEntity entity = WeatherDataDTO.runWeatherEntity();
+        WeatherEntityDao dao = new WeatherEntityDao();
+        dao.saveWeather(entity);
     }
 }
