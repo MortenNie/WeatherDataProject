@@ -87,6 +87,7 @@ public class WeatherDataDTO {
             System.out.println(weatherEntity);
         } else {
             System.out.println("try again, pick between København, Odense or Gladsaxe");
+            runWeatherEntity();
 
 
         }
