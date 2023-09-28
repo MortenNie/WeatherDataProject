@@ -27,7 +27,7 @@ Combine the data and put the data into a database.
 
 **<h3>3. Picture of EER Diagram:</h3>**
 
-![Example Image](assets/EERDiagram.png)
+![Example Image](assets/img.png)
 
 
 **<h3>4. Documentation: </h3><br>**
@@ -69,4 +69,14 @@ For exception handling we have decided to use them where it would be likely to g
 This includes the API call in WeatherAPIReader where we try catch for an IOException (Input/output Exception) in case a connection to the API can't be created.
 It then throws a RuntimeException which stops the program.
 
-Another example is in
+Another usage of Exception handling is in WeatherDataDTO where we have made the scanner input recursive if the user types a wrong city.
+When input is one of the correct cities, it will continue running. Else it will give an error string and make a recursive call.
+
+
+
+**<h3> Potential Improvements:</h3>**
+Potential improvements for this project would be to call our classes something more telling, as they all share very similar names and thus are a bit confusing.
+If we had a few more specific classes like DTOs, DAOs, Entities etc. We could make packages to put them in for order and easier management.
+However, we only have 1 or 2 of each, so we felt like it wasn't necessary in this project.
+We could also have made the calls to API and webscraping put into loops in case the server was down to prevent edge cases, so that we wouldn't have to run the program over and over until we finally established a connection again. (When their servers were up).
+PSA: Remember to add a delay if you run it in a loop or you might end up sending too many requests and getting yourself IP blocked. 
