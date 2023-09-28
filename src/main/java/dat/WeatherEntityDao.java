@@ -34,7 +34,7 @@ public class WeatherEntityDao {
 
             LocalDate yesterday = (date.minusDays(1));
 
-            TypedQuery<WeatherEntity> query = em.createQuery("SELECT h FROM WeatherEntity h WHERE h.time = :parameter", WeatherEntity.class);
+            TypedQuery<WeatherEntity> query = em.createQuery("SELECT h FROM WeatherEntity h WHERE h.date = :parameter", WeatherEntity.class);
             query.setParameter("parameter", yesterday);
             WeatherEntity result = query.getSingleResult();
 
