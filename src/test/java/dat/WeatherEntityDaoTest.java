@@ -41,7 +41,7 @@ class WeatherEntityDaoTest {
     @Test
     void getAll() {
 
-        WeatherEntity testWeatherEnt = new WeatherEntity("14.00", LocalDate.now(),
+        WeatherEntity testWeatherEnt = new WeatherEntity("København","14.00", LocalDate.now(),
                 21,2.0,0.0,221,65,
                 12.5655,55.6759,"Clouds","broken clouds",10000);
         List<WeatherEntity> weatherEntityList= new ArrayList<>();
@@ -59,7 +59,7 @@ class WeatherEntityDaoTest {
 
 
         LocalDate yesterday = LocalDate.now().minusDays(1);
-        WeatherEntity testWeatherEnt = new WeatherEntity("14.00", yesterday,
+        WeatherEntity testWeatherEnt = new WeatherEntity("København","14.00", yesterday,
                 21, 2.0, 0.0, 221, 65,
                     12.5655, 55.6759, "Clouds", "broken clouds", 10000);
             saveWeather(testWeatherEnt);
@@ -76,7 +76,7 @@ class WeatherEntityDaoTest {
     void saveWeather() {
 
 
-            WeatherEntity testWeatherEnt = new WeatherEntity("14.00", LocalDate.now(),
+            WeatherEntity testWeatherEnt = new WeatherEntity("København","14.00", LocalDate.now(),
                     21, 2.0, 0.0, 221, 65,
                     12.5655, 55.6759, "Clouds", "broken clouds", 10000);
 

@@ -78,7 +78,7 @@ public class WeatherDataDTO {
             List<WeatherDataConnectorToDTO> weatherData = WebScraping.tv2Weather(input);
             WeatherDataDTO obj = WeatherAPIReader.getWeatherFromCity(weatherData, input);
 
-            weatherEntity = new WeatherEntity(obj.getTime(), obj.getDate(),
+            weatherEntity = new WeatherEntity(input,obj.getTime(), obj.getDate(),
                     obj.getTemperatur(), obj.getWind(), obj.getPrecipitation(),
                     obj.getDeg(), obj.getHumidity(), obj.getLon(), obj.getLat(),
                     obj.getMain(), obj.getDescription(), obj.getVisibility());

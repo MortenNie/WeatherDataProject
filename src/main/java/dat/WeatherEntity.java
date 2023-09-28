@@ -20,6 +20,9 @@ public class WeatherEntity {
     @Column(name = "Id")
     private int id;
 
+    @Column(name = "cityname")
+    private String cityName;
+
     @Column(name = "time")
     private String time;
 
@@ -57,8 +60,8 @@ public class WeatherEntity {
     private int visibility;
 
 
-
-    public WeatherEntity(String time, LocalDate date, double temperatur, double wind, double precipitation, int deg, int humidity, double lon, double lat, String main, String description, int visibility) {
+    public WeatherEntity(String cityName, String time, LocalDate date, double temperatur, double wind, double precipitation, int deg, int humidity, double lon, double lat, String main, String description, int visibility) {
+        this.cityName = cityName;
         this.time = time;
         this.date = date;
         this.temperatur = temperatur;
