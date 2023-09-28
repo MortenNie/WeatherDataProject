@@ -1,7 +1,7 @@
 # WeatherDataProject
 Hold B Gruppe 7
 
-Morten, Dimitra, Jakob
+Morten, Dimitra, Jakob.
 
 
 **<h3>1. A Description of work progress:</h3>**
@@ -9,7 +9,7 @@ Morten, Dimitra, Jakob
 We decided to work every day in class like last time. <br>
 We feel like we work better and more efficiently as a group this way.
 We've used Kanban boards, Github Desktop, IntelliJ 2023.2.1.<br>
-We've also used Docker Desktop, Pgadmin, 
+We've also used Docker Desktop and PGAdmin to run our Databases.
 We've also used things like Discord to communicate when not together physically.
 
 
@@ -20,7 +20,7 @@ We would like to be able to webscrape weather-data from the website TV2Vejret.
 Afterwards we would like to add additional weather data from Openweathermap.org API to 
 enrich the information we've webscraped. Then Organizing the information, adding it together and finally adding
 the information to a database where we can keep info. <br>
-So in short: Get weather data from TV2, get additional weather data from Openweathermap API
+So in short: Get weather data from TV2, get additional weather data from OpenWeatherMap API
 Combine the data and put the data into a database.
 
 

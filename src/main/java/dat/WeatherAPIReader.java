@@ -112,5 +112,7 @@ public class WeatherAPIReader {
         public int getDeg() {
             return deg;
         }
+
+        
     }
 }
