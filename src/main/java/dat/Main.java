@@ -19,16 +19,16 @@ import static dat.WeatherAPIReader.gson;
 public class Main {
     public static void main(String[] args) {
 
-       /* WeatherEntity entity = WeatherDataDTO.runWeatherEntity();
+        WeatherEntity entity = WeatherDataDTO.runWeatherEntity();
         if (entity.getDescription() != null) {
             WeatherEntityDao dao = new WeatherEntityDao();
             dao.saveWeather(entity);
-            } */
+            }
 
 
-            WeatherEntityDao dao = new WeatherEntityDao();
-            WeatherEntity weatherEntity = dao.getYesterday(LocalDate.now());
-            System.out.println(weatherEntity);
+            //WeatherEntityDao dao = new WeatherEntityDao();
+            //WeatherEntity weatherEntity = dao.getYesterday(LocalDate.now());
+            //System.out.println(weatherEntity);
         }
     }
 

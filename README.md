@@ -1,14 +1,15 @@
 # WeatherDataProject
 Hold B Gruppe 7
 
-Morten, Jakob, Dimitra
+Morten, Dimitra, Jakob
 
 
 **<h3>1. A Description of work progress:</h3>**
 
 We decided to work every day in class like last time. <br>
 We feel like we work better and more efficiently as a group this way.
-We've used Kanban boards, Github Desktop, IntelliJ 2023.2.1. <br>
+We've used Kanban boards, Github Desktop, IntelliJ 2023.2.1.<br>
+We've also used Docker Desktop, Pgadmin, 
 We've also used things like Discord to communicate when not together physically.
 
 
@@ -26,11 +27,7 @@ Combine the data and put the data into a database.
 
 **<h3>3. Picture of EER Diagram:</h3>**
 
-xD(placeholder)
-
-
-
-
+![Example Image](assets/EERDiagram.png)
 
 
 **<h3>4. Documentation: </h3><br>**
@@ -67,3 +64,9 @@ so that you don't overload the server and get yourself IP Blocked.
 This is where a downtime/delay in the loop would be great to implement.
 
 
+**<h3> Exception Handling </h3>**
+For exception handling we have decided to use them where it would be likely to get an exception.
+This includes the API call in WeatherAPIReader where we try catch for an IOException (Input/output Exception) in case a connection to the API can't be created.
+It then throws a RuntimeException which stops the program.
+
+Another example is in
